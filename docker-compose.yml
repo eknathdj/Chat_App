@@ -40,3 +40,12 @@ services:
     depends_on:
       - frontend
       - backend
+  db:
+    image: postgres:15
+    environment:
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: chat
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+volumes:
+  pg_data:
